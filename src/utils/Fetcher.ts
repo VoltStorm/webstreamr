@@ -283,7 +283,7 @@ export class Fetcher {
       finalUrl.username = '';
       finalUrl.password = '';
 
-      const finalInit = { ...init, keepalive: true, signal: controller.signal, dispatcher: createDispatcher() };
+      const finalInit = { ...init, keepalive: true, signal: controller.signal, dispatcher: createDispatcher(url) };
 
       response = await fetch(finalUrl, finalInit);
     } catch (error) {
